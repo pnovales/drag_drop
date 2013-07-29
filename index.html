@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>JobSync Dashboard</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-responsive.css">
+		<link rel="stylesheet" type="text/css" href="css/jobsync_style.css">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="bootstrap/js/bootstrap.js"></script>
+		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<header>
+			<h3>Jobsync candidate dashboard</h3>
+		</header>
+		<div class="container-fluid" onclick="resetmodal()">
+			<section class="row-fluid">
+				<div id="new" class="span4" ondrop="dropCandidate(this, event)" ondragenter="dragEnterCandidate(this, event)" ondragleave="dragLeaveCandidate(this, event)" ondragover="allowDrop(event)">
+					<h3>New</h3>
+				</div>
+				<div id="interview" class="span4" ondrop="dropCandidate(this, event)" ondragenter="dragEnterCandidate(this, event)" ondragleave="dragLeaveCandidate(this, event)" ondragover="allowDrop(event)">
+					<h3>Interview</h3>					
+				</div>
+				<div id="hire" class="span4" ondrop="dropCandidate(this, event)" ondragenter="dragEnterCandidate(this, event)" ondragleave="dragLeaveCandidate(this, event)" ondragover="allowDrop(event)">
+					<h3>Hire</h3>
+				</div>
+			</section>
+		</div>
+
+		<div id="candidate_data" class="modal hide fade" style="display: none;">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" onclick="resetmodal()">
+              	<i class="icon-remove"></i>
+              </button> 
+              <h3>Candidates's details</h3>             
+            </div>
+            <div class="modal-body">
+            	<div id="data"></div>               		        
+            </div>
+            <div class="modal-footer">              
+              <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="resetmodal()">Close</button>
+            </div>
+          </div>
+
+		<footer>
+			<center>
+				<p>
+					pnovales@gmail.com
+				</p>
+			</center>
+		</footer>
+		<script type="text/javascript">
+			$.getJSON("data/cards_candidates.json", function(data) {
+				for(cards in data.cardsCandidates) {
+					$("#new").append('<div id= \"' + data.cardsCandidates[cards].id + '\"' + 'draggable=\"true\" class=\"candidate\" ondragstart=\"dragCandidate(this, event)\" data-toggle=\"modal\" ondragend=\"dragEndCandidate(this, event)\" onclick=\"ver(this)\">'  + data.cardsCandidates[cards].lastName + ', ' + data.cardsCandidates[cards].firstName + ', ' + data.cardsCandidates[cards].previousJob + ', ' + data.cardsCandidates[cards].sources + '</div>');
+				}
+			});
+			
+						
+			if($("#interview div").length === 0)
+				$("#interview").append('<p>Drag & Drop Candidates</p>');
+
+			if($("#hire div").length === 0)
+				$("#hire").append('<p>Drag & Drop Candidates</p>');
+
+			function resetmodal(){
+				$("#data").empty();				
+			}
+
+			function ver(candidateid){
+				$("#candidate_data").modal();
+								
+                temp = candidateid.id;								
+				$.getJSON("data/cards_candidates.json", function(data) {
+								for(cards in data.cardsCandidates) {
+									if(data.cardsCandidates[cards].id == temp)
+									{
+										$("#data").append('<div>' + '<b>'+'First name: '+'</b>' + data.cardsCandidates[cards].firstName + '</br>' 
+										                          + '<b>'+'Last name: '+'</b>' + data.cardsCandidates[cards].lastName + '</br>'
+										                          + '<b>'+'Description: '+'</b>' + data.cardsCandidates[cards].descriptions + '</br>'
+										                          +
+										                 '</div>');	
+									}					
+								}
+				
+								
+							});
+				
+
+			}
+
+			function allowDrop(event) {
+				event.preventDefault();
+			}
+
+			function dragCandidate(candidate, event) {
+				event.dataTransfer.setData('Candidate', candidate.id);
+				$(candidate).css('border', '3px dashed');
+			}
+
+			function dropCandidate(target, event) {
+				event.preventDefault();
+				var candidate = event.dataTransfer.getData('Candidate');
+				target.appendChild(document.getElementById(candidate));
+				$(target).css({
+					'border-style' : 'solid'
+				});
+				$("section p").hide();
+			}
+
+			function dragEnterCandidate(target, event) {
+				event.preventDefault();
+				$(target).css({
+					'border-style' : 'dashed'
+				});
+			}
+
+			function dragEndCandidate(target, event) {
+				if($("#new div").length === 0)
+					$("#new").append('<p>Drag & Drop Candidates</p>');
+
+				if($("#interview div").length === 0)
+					$("#interview").append('<p>Drag & Drop Candidates</p>');
+
+				if($("#hire div").length === 0)
+					$("#hire").append('<p>Drag & Drop Candidates</p>');
+
+				$(target).css({
+					'border-style' : 'solid'
+				});
+			}
+
+			function dragLeaveCandidate(target, event) {
+				$(target).css({
+					'border-style' : 'solid'
+				});
+			}
+		</script>
+	</body>
+</html>

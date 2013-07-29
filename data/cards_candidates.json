@@ -1,0 +1,42 @@
+{
+
+	"cardsCandidates": [
+
+		{
+			"id": "pn",
+			"firstName": "Pedro",
+			"lastName": "Novales",
+			"previousJob": "OpenJAF",
+			"sources": "LinkedIn",
+			"descriptions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tortor libero, volutpat ut lacinia ut, lobortis at massa. Etiam condimentum laoreet dolor, cursus auctor leo tristique a. Donec congue vulputate nisl, a aliquam libero aliquet at. Proin auctor enim vitae lectus lacinia vitae ullamcorper dolor tempus. Ut at ligula mi. Curabitur nisl sapien, laoreet vel blandit quis, condimentum interdum eros. Duis eget sem justo. Vivamus sit amet ante massa, eu facilisis ipsum. Ut fermentum convallis placerat. Suspendisse sit amet felis cursus mauris tempor facilisis."
+		}, {
+			"id": "ms",
+			"firstName": "Miguel",
+			"lastName": "Sancho",
+			"previousJob": "OpenJAF",
+			"sources": "Monster",
+			"descriptions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tortor libero, volutpat ut lacinia ut, lobortis at massa. Etiam condimentum laoreet dolor, cursus auctor leo tristique a. Donec congue vulputate nisl, a aliquam libero aliquet at. Proin auctor enim vitae lectus lacinia vitae ullamcorper dolor tempus. Ut at ligula mi. Curabitur nisl sapien, laoreet vel blandit quis, condimentum interdum eros. Duis eget sem justo. Vivamus sit amet ante massa, eu facilisis ipsum. Ut fermentum convallis placerat. Suspendisse sit amet felis cursus mauris tempor facilisis."
+		}, {
+			"id": "mc",
+			"firstName": "Cesar",
+			"lastName": "Lage",
+			"previousJob": "OpenJAF",
+			"sources": "Craigslist",
+			"descriptions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tortor libero, volutpat ut lacinia ut, lobortis at massa. Etiam condimentum laoreet dolor, cursus auctor leo tristique a. Donec congue vulputate nisl, a aliquam libero aliquet at. Proin auctor enim vitae lectus lacinia vitae ullamcorper dolor tempus. Ut at ligula mi. Curabitur nisl sapien, laoreet vel blandit quis, condimentum interdum eros. Duis eget sem justo. Vivamus sit amet ante massa, eu facilisis ipsum. Ut fermentum convallis placerat. Suspendisse sit amet felis cursus mauris tempor facilisis."
+		}, {
+			"id": "rp",
+			"firstName": "Raul",
+			"lastName": "Perez",
+			"previousJob": "OpenJAF",
+			"sources": "Careerbuilder",
+			"descriptions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tortor libero, volutpat ut lacinia ut, lobortis at massa. Etiam condimentum laoreet dolor, cursus auctor leo tristique a. Donec congue vulputate nisl, a aliquam libero aliquet at. Proin auctor enim vitae lectus lacinia vitae ullamcorper dolor tempus. Ut at ligula mi. Curabitur nisl sapien, laoreet vel blandit quis, condimentum interdum eros. Duis eget sem justo. Vivamus sit amet ante massa, eu facilisis ipsum. Ut fermentum convallis placerat. Suspendisse sit amet felis cursus mauris tempor facilisis."
+		}, {
+            "id": "pq",
+            "firstName": "Pedro",
+            "lastName": "Quintero",
+            "previousJob": "OpenJAF",
+            "sources": "Careerbuilder",
+            "descriptions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tortor libero, volutpat ut lacinia ut, lobortis at massa. Etiam condimentum laoreet dolor, cursus auctor leo tristique a. Donec congue vulputate nisl, a aliquam libero aliquet at. Proin auctor enim vitae lectus lacinia vitae ullamcorper dolor tempus. Ut at ligula mi. Curabitur nisl sapien, laoreet vel blandit quis, condimentum interdum eros. Duis eget sem justo. Vivamus sit amet ante massa, eu facilisis ipsum. Ut fermentum convallis placerat. Suspendisse sit amet felis cursus mauris tempor facilisis."
+        }
+	]
+}
